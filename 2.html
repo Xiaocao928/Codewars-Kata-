@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // function sum(numbers) {
+      //   'use strict'
+      //   let sum = 0
+      //   if (numbers.length == 0) {
+      //     return sum
+      //   } else {
+      //     numbers.forEach((item) => {
+      //       sum += item
+            
+      //     })
+      //   }
+      //   return sum
+      // }
+      // let arr = []
+      // console.log(sum(arr))
+
+      //求最大值与最小值
+      // var min = function(list) {
+      //   list.forEach(item => {
+      //     item<list[0]? list[0]=item:list[0]
+      //   });
+      //   return list[0]
+      // }
+      // var max = function(list) {
+      //   list.forEach(item => {
+      //     item>list[0]? list[0]=item:list[0]
+      //   });
+      //   return list[0]
+      // }
+      const arr = [11,23,543,633,-11,12,657]
+      // let minNumber =min(arr)
+      // let maxNumber =max(arr)
+      // console.log(minNumber,maxNumber)
+     
+      const min =(list)=>{
+        return Math.min(...list)
+      }
+      const max =(list)=>{
+        return Math.max(...list)
+      }
+       let minNumber =min(arr)
+      let maxNumber =max(arr)
+       console.log(minNumber,maxNumber)
+    </script>
+  </body>
+</html>

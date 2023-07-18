@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // Complete the square sum function so that it squares each number passed into it
+      // and then sums the results together.
+      // 自己写的
+      function squareSum(numbers) {
+        let sum = 0
+        numbers.forEach((item) => {
+          sum += item ** 2
+        })
+      }
+      // 高票回答
+      function squareSum(numbers) {
+        return numbers.reduce(function (sum, n) {
+          return n * n + sum
+        }, 0)
+      }
+    </script>
+  </body>
+</html>

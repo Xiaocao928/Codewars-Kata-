@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 一个数的平方 height的平方 
+      // 1.height**2
+      // 2.Math.pow(height,2)
+      function bmi(weight, height) {
+        var index = weight / height ** 2
+        if (index <= 18.5) {
+          return 'Underweight'
+        } else if (index <= 25) {
+          return 'Normal'
+        } else if (index <= 30) {
+          return 'Overweight'
+        } else {
+          return 'Obese'
+        }
+      }
+      // 高票答案
+      function bmi(weight, height) {
+        var result = weight / Math.pow(height, 2)
+
+        if (result <= 18.5) {
+          return 'Underweight'
+        } else if (result <= 25) {
+          return 'Normal'
+        } else if (result <= 30) {
+          return 'Overweight'
+        } else {
+          return 'Obese'
+        }
+      }
+    </script>
+  </body>
+</html>

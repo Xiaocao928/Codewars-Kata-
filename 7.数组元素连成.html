@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 题目:Given a non-empty array of integers, return the result of multiplying the values together
+      //  in order. Example:
+      // [1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
+      // 自己写的
+      function grow(x) {
+        var res = 1
+        x.forEach((element) => {
+          res = res * element
+        })
+        return res
+      }
+      // 高票答案
+      const grow = (x) => x.reduce((a, b) => a * b)
+    </script>
+  </body>
+</html>
