@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //判断一个数是不是自恋数
+      //自己写的
+      function narcissistic(value) {
+        var digitCount = Math.floor(Math.log10(value)) + 1
+        var digit = value.toString().split('').map(Number)
+        var sum = 0
+        digit.forEach((item) => {
+          console.log(Math.pow(item, digitCount))
+          sum += Math.pow(item, digitCount)
+        })
+        if (sum === value) {
+          return true
+        } else {
+          return false
+        }
+      }
+      console.log(narcissistic(7))
+      //高票答案
+      function narcissistic(value) {
+        return (
+          ('' + value).split('').reduce(function (p, c) {
+            return p + Math.pow(c, ('' + value).length)
+          }, 0) == value
+        )
+      }
+    </script>
+  </body>
+</html>

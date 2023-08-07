@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      /*
+    Create a function which answers the question "Are you playing banjo?".
+    If your name starts with the letter "R" or lower case "r", you are playing banjo!
+    The function takes a name as its only argument, and returns one of the following strings:
+    name + " plays banjo" 
+    name + " does not play banjo"
+    */
+      //自己写的
+      function areYouPlayingBanjo(name) {
+        //获取name的第一个字符
+        var firstLetter = name.charAt(0)
+        if (firstLetter === 'r' || firstLetter === 'R') {
+          return name + ' plays banjo'
+        } else {
+          return name + ' does not play banjo'
+        }
+      }
+      //高票回答
+      function areYouPlayingBanjo(name) {
+        return (
+          name +
+          (name[0].toLowerCase() == 'r' ? ' plays' : ' does not play') +
+          ' banjo'
+        )
+      }
+
+      //toLowerCase()这个方法,将字符串转成小写
+    </script>
+  </body>
+</html>

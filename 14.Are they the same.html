@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function comp(array1, array2) {
+        if (!array1 || !array2) {
+          return false
+        }
+        if (array1.length != array2.length) {
+          return false
+        }
+        return array2.every((item) => {
+          return array1.includes(Math.sqrt(item))
+        })
+      }
+      let a1 = [2, 2, 3]
+      let a2 = [4, 9, 9]
+      let b1 = [7, 8, 1, 3, 8, 4, 8, 0, 7, 0, 9, 2]
+      let b2 = [49, 81, 16, 64, 4, 1, 64, 9, 1, 49, 0, 64]
+      console.log(comp(a1, a2))
+      myChart.showLoading();
+$.get(ROOT_PATH + '/data/asset/data/flare.json', function (data) {
+  myChart.hideLoading();
+  data.children.forEach(function (datum, index) {
+    index % 2 === 0 && (datum.collapsed = true);
+    datum.lineStyle = {
+            color:
+              'rgb(' +
+              Math.floor(Math.random() * 256) +
+              ',' +
+              Math.floor(Math.random() * 256) +
+              ',' +
+              Math.floor(Math.random() * 256) +
+              ')',
+          }
+          if (datum.children) {
+            datum.children.forEach(function (child, childIndex) {
+              child.lineStyle = {
+                color:
+                  'rgb(' +
+                  Math.floor(Math.random() * 256) +
+                  ',' +
+                  Math.floor(Math.random() * 256) +
+                  ',' +
+                  Math.floor(Math.random() * 256) +
+                  ')',
+              }
+            })
+          }
+  });
+  myChart.setOption(
+    (option = {
+      tooltip: {
+        trigger: 'item',
+        triggerOn: 'mousemove'
+      },
+      series: [
+        {
+          type: 'tree',
+          data: [data],
+          top: '1%',
+          left: '7%',
+          bottom: '1%',
+          right: '20%',
+          symbolSize: 7,
+          label: {
+            position: 'left',
+            verticalAlign: 'middle',
+            align: 'right',
+            fontSize: 12,
+          // formatter: function (params) {
+          //     return params.name;
+          //   }
+          },
+          leaves: {
+            label: {
+              position: 'right',
+              verticalAlign: 'middle',
+              align: 'left'
+            }
+          },
+          emphasis: {
+            focus: 'descendant'
+          },
+          expandAndCollapse: true,
+          animationDuration: 550,
+          animationDurationUpdate: 750
+        }
+      ]
+    })
+  );
+    // 监听节点文本的点击事件
+  myChart.on('click', function (params) {
+    if (params.componentType === 'series' && params.seriesType === 'tree') {
+      // 在这里处理点击事件，params.data 是节点的数据
+      console.log('点击了节点，节点名称：', params.name);
+    }
+  });
+});
+    </script>
+  </body>
+</html>
